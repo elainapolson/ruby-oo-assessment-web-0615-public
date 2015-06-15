@@ -4,3 +4,24 @@
 
 # The Temperature class should accept the current temperature
 # and respond_to a status method.
+
+
+class Temperature
+
+  attr_accessor :current_temperature
+
+  def initialize(current_temperature)
+    @current_temperature = current_temperature.to_i
+  end
+
+  def status
+    if @current_temperature.between?(18,21)
+      "comfortable"
+    elsif @current_temperature >= 22
+      "hot"
+    else
+      "cold"
+    end
+  end
+
+end
